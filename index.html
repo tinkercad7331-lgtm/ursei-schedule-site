@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Расписание занятий учебных групп УрСЭИ. Независимый проект.">
+  <title>Расписание УрСЭИ</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Расписание УрСЭИ — главная">
+        <span class="brand-mark">У</span>
+        <span><strong>Расписание УрСЭИ</strong><small>Учебное расписание</small></span>
+      </a>
+      <span class="status-pill"><i></i> Независимый проект</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">ТВОЙ УЧЕБНЫЙ ДЕНЬ</div>
+        <h1>Всё расписание.<br><span>В одном месте.</span></h1>
+        <p>Выбирай группу и дату, чтобы посмотреть занятия. Данные появятся после проверки подключения к официальному источнику.</p>
+      </section>
+
+      <section class="controls panel" aria-label="Параметры расписания">
+        <label class="field">
+          <span>Учебная группа</span>
+          <select id="groupSelect">
+            <option value="РПД-101">РПД-101</option>
+            <option value="РПД-102" selected>РПД-102</option>
+            <option value="РПД-103">РПД-103</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Дата занятий</span>
+          <input type="date" id="dateSelect">
+        </label>
+        <button id="todayButton" class="secondary-button" type="button">Сегодня</button>
+      </section>
+
+      <section class="schedule-section">
+        <div class="section-heading">
+          <div><div class="eyebrow">РАСПИСАНИЕ</div><h2 id="dayHeading">Занятия на выбранную дату</h2></div>
+          <span class="count-chip" id="lessonCount">0 занятий</span>
+        </div>
+        <div id="scheduleList" class="schedule-list">
+          <div class="empty-state panel">
+            <span class="empty-icon">◷</span>
+            <h3>Источник ещё не подключён</h3>
+            <p>Мы не показываем случайные или выдуманные пары. Сначала нужно проверить, как официальный сайт передаёт расписание.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel feature-card">
+          <div class="card-icon">↻</div>
+          <h3>Автообновление</h3>
+          <p id="syncMessage">Статус синхронизации будет показан после первого успешного получения данных.</p>
+          <small id="lastSync">Последнее обновление: пока нет</small>
+        </article>
+        <article class="panel feature-card">
+          <div class="card-icon">◉</div>
+          <h3>Поиск преподавателя</h3>
+          <p>Найди занятия преподавателя после подключения проверенных данных.</p>
+          <label class="search-field"><span class="sr-only">Имя преподавателя</span><input id="teacherSearch" type="search" placeholder="Фамилия преподавателя…" disabled><button id="teacherSearchButton" type="button" disabled>Найти</button></label>
+          <div id="teacherResults" class="teacher-results"></div>
+        </article>
+        <article class="panel feature-card">
+          <div class="card-icon">⌁</div>
+          <h3>Расписание звонков</h3>
+          <p id="bellsMessage">Время звонков пока не подтверждено официальным источником.</p>
+          <div id="bellsList" class="bells-list"></div>
+        </article>
+      </section>
+
+      <footer>
+        <span>Расписание УрСЭИ · независимый проект</span>
+        <span id="sourceLink"><a href="https://ursei.su/asu/ssched.php" target="_blank" rel="noopener noreferrer">Официальный источник ↗</a></span>
+      </footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1020; --panel: #121a2d; --panel2: #172138; --border: #26334d;
+  --text: #f1f5ff; --muted: #9ba9c4; --accent: #8b9cff; --accent2: #6b7df4;
+  --green: #56d6a1; --shadow: 0 18px 55px rgba(0,0,0,.18);
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 50% -20%, #1c2a50 0, transparent 55%), var(--bg); color: var(--text); font: 16px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: #b7c1ff; text-decoration: none; } a:hover { text-decoration: underline; }
+.app-shell { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px 0; border-bottom: 1px solid rgba(154,174,218,.13); }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--text); }
+.brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg,#8795ff,#5966d9); color: white; font-size: 24px; font-weight: 800; box-shadow: 0 8px 25px #5966d944; }
+.brand strong, .brand small { display: block; } .brand strong { font-size: 15px; letter-spacing: -.2px; } .brand small { margin-top: 2px; color: var(--muted); font-size: 12px; }
+.status-pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 999px; padding: 7px 11px; color: var(--muted); font-size: 12px; white-space: nowrap; }
+.status-pill i { width: 7px; height: 7px; border-radius: 50%; background: #f0bd64; }
+.hero { padding: 58px 0 32px; max-width: 720px; }
+.eyebrow { color: #9caaff; font-size: 11px; font-weight: 800; letter-spacing: 1.8px; }
+h1 { margin: 12px 0 14px; font-size: clamp(38px, 6vw, 64px); line-height: 1.03; letter-spacing: -2.6px; }
+h1 span { color: #98a5ff; } .hero p { max-width: 620px; margin: 0; color: var(--muted); font-size: 16px; }
+.panel { background: linear-gradient(145deg, rgba(22,32,54,.95), rgba(16,24,42,.96)); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); }
+.controls { display: grid; grid-template-columns: 1fr 1fr auto; align-items: end; gap: 14px; padding: 18px; }
+.field { display: grid; gap: 7px; color: var(--muted); font-size: 12px; font-weight: 650; }
+select, input { width: 100%; min-width: 0; border: 1px solid #33415e; border-radius: 11px; padding: 12px 13px; background: #0d1527; color: var(--text); font: inherit; outline: none; }
+select:focus, input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px #8b9cff20; }
+button { cursor: pointer; border: 0; border-radius: 11px; padding: 12px 16px; color: white; background: linear-gradient(135deg,var(--accent2),#8c83ff); font: inherit; font-weight: 700; transition: transform .15s, opacity .15s; }
+button:hover { transform: translateY(-1px); } button:disabled, input:disabled { cursor: not-allowed; opacity: .45; }
+.secondary-button { background: #202c48; border: 1px solid #34415f; }
+.schedule-section { padding-top: 40px; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-bottom: 16px; }
+h2 { margin: 5px 0 0; font-size: 24px; letter-spacing: -.6px; }
+.count-chip { border: 1px solid var(--border); background: #121a2d; padding: 6px 10px; border-radius: 9px; color: var(--muted); font-size: 12px; white-space: nowrap; }
+.schedule-list { display: grid; gap: 12px; }
+.empty-state { text-align: center; padding: 42px 22px; }
+.empty-icon { display: grid; place-items: center; width: 54px; height: 54px; margin: 0 auto 15px; border-radius: 18px; background: #222d4a; color: #aab5ff; font-size: 28px; }
+.empty-state h3 { margin: 0 0 8px; font-size: 18px; } .empty-state p { max-width: 550px; margin: 0 auto; color: var(--muted); font-size: 14px; }
+.lesson { display: grid; grid-template-columns: 105px 1fr auto; align-items: center; gap: 18px; padding: 18px; }
+.lesson-time { color: #aeb8ff; font-size: 14px; font-weight: 800; }
+.lesson-title { font-weight: 750; } .lesson-meta { margin-top: 4px; color: var(--muted); font-size: 13px; }
+.room-chip { border: 1px solid #33415e; border-radius: 9px; padding: 7px 10px; color: #c6d0ea; font-size: 12px; white-space: nowrap; }
+.lower-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; padding-top: 34px; }
+.feature-card { padding: 20px; min-width: 0; } .card-icon { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: #222e4b; color: #aab5ff; font-size: 22px; }
+.feature-card h3 { margin: 14px 0 7px; font-size: 16px; } .feature-card p { min-height: 45px; margin: 0; color: var(--muted); font-size: 13px; }
+.feature-card small { display: block; margin-top: 15px; color: #7f8eaa; font-size: 11px; }
+.search-field { display: flex; gap: 6px; margin-top: 14px; } .search-field input { padding: 9px 10px; font-size: 12px; } .search-field button { padding: 8px 10px; font-size: 12px; }
+.teacher-results, .bells-list { margin-top: 10px; color: var(--muted); font-size: 12px; }
+footer { display: flex; justify-content: space-between; gap: 12px; padding: 30px 0 26px; margin-top: 24px; border-top: 1px solid rgba(154,174,218,.13); color: #7f8eaa; font-size: 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 760px) { .app-shell { padding: 0 16px; } .topbar { align-items: flex-start; } .status-pill { font-size: 10px; } .hero { padding-top: 42px; } h1 { letter-spacing: -1.5px; } .controls { grid-template-columns: 1fr 1fr; } .controls .secondary-button { grid-column: 1/-1; } .lower-grid { grid-template-columns: 1fr; } .feature-card p { min-height: 0; } }
+@media (max-width: 460px) { .brand strong { font-size: 13px; } .status-pill { max-width: 115px; white-space: normal; } .controls { grid-template-columns: 1fr; } .controls .secondary-button { grid-column: auto; } .section-heading { align-items: start; flex-direction: column; } .lesson { grid-template-columns: 72px 1fr; gap: 10px; } .room-chip { grid-column: 2; justify-self: start; } footer { flex-direction: column; } }

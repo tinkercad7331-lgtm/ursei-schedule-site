@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "source": "https://ursei.su/asu/ssched.php",
+  "lastSuccessfulSync": null,
+  "status": "not_connected",
+  "message": "Источник расписания ещё не подключён. Показ данных не подтверждён.",
+  "groups": {}
+}
